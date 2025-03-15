@@ -11,6 +11,11 @@ https://docs.djangoproject.com/en/5.1/ref/settings/
 """
 
 from pathlib import Path
+from decouple import config # type: ignore
+
+DEBUG = config('DEBUG', default=False, cast=bool)
+SECRET_KEY = config('SECRET_KEY')
+ALLOWED_HOSTS = config('ALLOWED_HOSTS', default='localhost').split(',')
 
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
 BASE_DIR = Path(__file__).resolve().parent.parent
@@ -39,7 +44,7 @@ INSTALLED_APPS = [
     'django.contrib.staticfiles',
     'rest_framework',  # DRF
     'portfolio',  # Portfolio app
-    'corsheaders',  # CORS headers
+    'corsheaders',
 ]
 
 MIDDLEWARE = [
@@ -50,9 +55,11 @@ MIDDLEWARE = [
     'django.contrib.auth.middleware.AuthenticationMiddleware',
     'django.contrib.messages.middleware.MessageMiddleware',
     'django.middleware.clickjacking.XFrameOptionsMiddleware',
-    'corsheaders.middleware.CorsMiddleware',  # CORS middleware
+    'corsheaders.middleware.CorsMiddleware',
 
 ]
+
+CORS_ALLOW_ALL_ORIGINS = True  # Allow all origins (for development)
 
 ROOT_URLCONF = 'portfolio_backend.urls'
 
