@@ -1,6 +1,14 @@
-# Ignore virtual environments
+# Ignore Python virtual environments
 venv/
 portfolio_backend/venv/
 
-# Ignore dependencies
+# Ignore node_modules
 node_modules/
+
+# Ignore compiled Python files
+__pycache__/
+*.pyc
+*.pyo
+
+# Ignore environment variables
+.env
