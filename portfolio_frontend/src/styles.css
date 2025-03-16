@@ -24,3 +24,86 @@ p {
 .project-item, .experience-item, .education-item {
   margin-bottom: 20px;
 }
+.chat-page {
+  padding: 20px;
+  max-width: 800px;
+  margin: 0 auto;
+}
+
+.chat-page h1 {
+  font-size: 2rem;
+  margin-bottom: 20px;
+}
+
+.chat-page form {
+  display: flex;
+  gap: 10px;
+  margin-bottom: 20px;
+}
+
+.chat-page input {
+  flex: 1;
+  padding: 10px;
+  font-size: 1rem;
+}
+
+.chat-page button {
+  padding: 10px 20px;
+  font-size: 1rem;
+  cursor: pointer;
+}
+
+.answer {
+  background: #f9f9f9;
+  padding: 20px;
+  border-radius: 8px;
+  margin-top: 20px;
+}
+
+.answer h2 {
+  font-size: 1.5rem;
+  margin-bottom: 10px;
+}
+
+.answer p {
+  font-size: 1rem;
+  color: #333;
+}
+
+.chat-history {
+  margin-top: 20px;
+  padding: 20px;
+  background: #f9f9f9;
+  border-radius: 8px;
+}
+
+.chat-history h2 {
+  font-size: 1.5rem;
+  margin-bottom: 10px;
+}
+
+.chat-item {
+  margin-bottom: 10px;
+  padding: 10px;
+  border: 1px solid #ddd;
+  border-radius: 4px;
+}
+
+.chat-item p {
+  margin: 5px 0;
+}
+
+.chat-history button {
+  background-color: #ff4d4d;
+  color: white;
+  border: none;
+  padding: 8px 16px;
+  border-radius: 4px;
+  cursor: pointer;
+  margin-bottom: 10px;
+}
+
+.chat-history button:disabled {
+  background-color: #ccc;
+  cursor: not-allowed;
+}
