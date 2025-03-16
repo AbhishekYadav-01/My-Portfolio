@@ -1,8 +1,6 @@
-# Ignore virtual environment
+# Ignore virtual environments
 venv/
 portfolio_backend/venv/
 
-# Ignore large libraries
-*.dll
-*.lib
-
+# Ignore dependencies
+node_modules/
