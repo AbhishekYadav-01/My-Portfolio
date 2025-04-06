@@ -1,30 +1,41 @@
 import React from 'react';
 import { motion } from 'framer-motion';
+import { Container } from 'react-bootstrap';
+import { FaBriefcase } from 'react-icons/fa';
 
 const Experience = ({ data }) => {
   if (!data || data.length === 0) return <div>No experience available</div>;
 
   return (
     <motion.section
-      initial={{ opacity: 0, y: 20 }}
-      animate={{ opacity: 1, y: 0 }}
-      transition={{ duration: 0.5 }}
-      className="experience"
+      initial={{ opacity: 0 }}
+      animate={{ opacity: 1 }}
+      className="experience-section"
     >
-      <h2>Experience</h2>
-      {data.map((exp, index) => (
-        <motion.div
-          key={index}
-          initial={{ opacity: 0, x: -20 }}
-          animate={{ opacity: 1, x: 0 }}
-          transition={{ duration: 0.5, delay: index * 0.2 }}
-          className="experience-item"
-        >
-          <h3>{exp.company} - {exp.position}</h3>
-          <p>{exp.start_date} to {exp.end_date || 'Present'}</p>
-          <p>{exp.description}</p>
-        </motion.div>
-      ))}
+      <Container>
+        <h2 className="section-title mb-5">Professional Journey</h2>
+        <div className="timeline">
+          {data.map((exp, index) => (
+            <motion.div
+              key={index}
+              className={`timeline-item ${index % 2 === 0 ? 'left' : 'right'}`}
+              initial={{ opacity: 0, y: 20 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true, margin: "-100px" }}
+            >
+              <div className="timeline-marker">
+                <FaBriefcase className="timeline-icon" />
+              </div>
+              <div className="timeline-content">
+                <h3 className="position">{exp.position}</h3>
+                <div className="company">{exp.company}</div>
+                <div className="duration">{exp.start_date} - {exp.end_date || 'Present'}</div>
+                <p className="description">{exp.description}</p>
+              </div>
+            </motion.div>
+          ))}
+        </div>
+      </Container>
     </motion.section>
   );
 };

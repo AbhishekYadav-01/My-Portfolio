@@ -8,9 +8,15 @@ function App() {
   return (
     <Router>
       <Routes>
-        <Route path="/" element={<HomePage />} />
-        <Route path="/portfolio" element={<PortfolioPage />} />
+        <Route path="/" element={<PortfolioPage />} />
         <Route path="/chat" element={<ChatPage />} />
+        <Route path="/projects" element={<PortfolioPage section="projects" />} />
+        <Route path="/about-me" element={<PortfolioPage section="about-me" />} />
+        <Route path="/skills" element={<PortfolioPage section="skills" />} />
+        <Route path="/experience" element={<PortfolioPage section="experience" />} />
+        <Route path="/education" element={<PortfolioPage section="education" />} />
+        <Route path="/achievements" element={<PortfolioPage section="achievements" />} />
+        <Route path="/contact" element={<PortfolioPage section="contact" />} />
       </Routes>
     </Router>
   );
